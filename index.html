@@ -1,147 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>"Natalia Khan - Product Manager @ Life"</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NATALIA KHAN</title>
+
+<!-- Source Serif Pro -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ffe6f0, #f3d9ff, #ffe6f0);
-    background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
+  body{
+    margin:0;
+    font-family: "Source Serif 4", Georgia, serif;
+    background: #C2185B; /* 0xFFC2185B equivalent */
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:22px;
+  }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+  .container{
+    background: rgba(255,255,255,0.95);
+    padding: 36px 26px;
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    max-width: 780px;
+    width: 92%;
+  }
 
-.container {
-    background: white;
-    padding: 40px;
-    border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    max-width: 750px;
-    width: 90%;
-}
+  h1{
+    margin:0 0 15px;
+    font-size: clamp(20px, 3vw, 32px);
+    line-height: 1.4;
+    color: #7a1038;
+    font-weight: 800;
+  }
 
-h1 {
-    font-size: 26px;
-    color: #d63384;
-    line-height: 1.5;
-}
+  .question{
+    font-size: clamp(16px, 2vw, 20px);
+    margin-top: 10px;
+    font-weight: 700;
+    color: #4a1740;
+  }
 
-.question {
-    font-size: 20px;
-    margin-top: 15px;
-    font-weight: bold;
-    color: #6f42c1;
-}
-
-.buttons {
+  .buttons{
     margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+    display:flex;
+    justify-content:center;
+    gap: 16px;
+    flex-wrap:wrap;
+  }
 
-button {
-    padding: 15px 25px;
+  button{
+    padding: 15px 20px;
     font-size: 18px;
-    font-weight: bold;
-    border-radius: 15px;
+    font-weight: 800;
+    border-radius: 16px;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
-    min-width: 180px;
-}
+    min-width: 200px;
+    flex: 0 0 200px; /* equal size */
+    font-family: inherit;
+  }
 
-.yes {
+  .yes{
     background: linear-gradient(45deg, #ff4d8d, #ff85b2);
     color: white;
-}
+    box-shadow: 0 12px 30px rgba(255,77,141,0.4);
+  }
 
-.no {
-    background: #ffffff;
-    border: 2px solid #ff4d8d;
-    color: #ff4d8d;
-}
+  .no{
+    background: white;
+    border: 2px solid #C2185B;
+    color: #C2185B;
+  }
 
-button:hover {
+  button:hover{
     transform: scale(1.05);
-}
+  }
 
-.result {
+  .result{
     margin-top: 25px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #ff4d8d;
-}
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 800;
+    color: #C2185B;
+  }
 </style>
 </head>
 
 <body>
 
 <div class="container">
-    <h1 id="mainText">
-        Natalia Arbaz Khan, Wife of Arbaz Natalia Khan <br><br>
-        While you've already arranged a wonderful beach getaway for us<br>
-        Will you be please be valentine this year and will you please fo out with me on <br><br>
-        📅 Wednesday, 18th February 2026 📅
-    </h1>
+  <h1 id="mainText">
+    My love, my heart, partner of my life <br><br>
+    Will you be my valentine and go out with me on  <br>
+    📅 Wednesday, 18th February 2026 📅
+  </h1>
 
-    <div class="question" id="questionText">
-        Will you be my Valentine? 💌
-    </div>
+  <div class="question">Will you be my Valentine? 💌</div>
 
-    <div class="buttons">
-        <button class="yes" id="yesBtn">Yes 💖</button>
-        <button class="no" id="noBtn">No 🙈</button>
-    </div>
+  <div class="buttons">
+    <button class="yes" id="yesBtn">Yes </button>
+    <button class="no" id="noBtn">No </button>
+  </div>
 
-    <div class="result" id="result"></div>
+  <div class="result" id="result"></div>
 </div>
 
 <script>
-let yesBtn = document.getElementById("yesBtn");
-let noBtn = document.getElementById("noBtn");
-let questionText = document.getElementById("questionText");
-let mainText = document.getElementById("mainText");
-let result = document.getElementById("result");
+  const yesBtn = document.getElementById("yesBtn");
+  const noBtn = document.getElementById("noBtn");
+  const mainText = document.getElementById("mainText");
+  const result = document.getElementById("result");
 
-let yesSize = 18;
-let noSize = 18;
+  let yesSize = 18;
+  let noSize = 18;
+  let noClickedOnce = false;
 
-yesBtn.addEventListener("click", function() {
-    mainText.innerHTML = "💌 Guests will start RSVPing in your inbox on 17th February, stay tuned pookie 💖";
-    questionText.innerHTML = "";
-    result.innerHTML = "I HAVE BEEN ACCEPTED!";
-    yesBtn.style.display = "none";
-    noBtn.style.display = "none";
-});
+  yesBtn.addEventListener("click", () => {
+    mainText.innerHTML = "Guests will start RSVPing in your inbox on 17th February, stay tuned pookie 💖";
+    result.innerHTML = "🎉 I HAVE WON 🎉";
+    yesBtn.disabled = true;
+    noBtn.disabled = true;
+  });
 
-noBtn.addEventListener("click", function() {
-    questionText.innerHTML = "Wifey please";
+  noBtn.addEventListener("click", () => {
 
+    // Replace only the NO button text
+    if (!noClickedOnce) {
+      noBtn.textContent = "Wifey please";
+      noClickedOnce = true;
+    }
+
+    // Make Yes bigger and No smaller
     yesSize += 4;
-    noSize -= 2;
+    noSize -= 3;
 
     yesBtn.style.fontSize = yesSize + "px";
     noBtn.style.fontSize = noSize + "px";
 
-    if(noSize < 8){
-        noBtn.style.display = "none";
+    if (noSize < 10) {
+      noBtn.style.transform = "scale(0.85)";
     }
-});
+  });
 </script>
 
 </body>
